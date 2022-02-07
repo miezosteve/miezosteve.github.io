@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../img/miezo-ico.ico" type="image/x-icon">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="../../vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../vendors/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="../shared/scss/layout.css">
+  <link rel="stylesheet" href="../shared/scss/sidebar.css">
+  <link rel="stylesheet" href="../scss/edit-space.css">
+  <title>goBooking - 編輯空間</title>
+</head>
+
+<body>
+  <!-- Bg -->
+  <div class="bg-wrapper">
+    <!-- Main Card -->
+    <div class="main-card d-flex flex-column">
+      <!-- Header -->
+      <header class="header d-flex p-3 border-bottom">
+        <a href="#">
+          <h1 class="logo d-flex mb-0">
+            <img id="site-logo" class="me-2" src="../img/miezo-logo.png" alt="logo">
+            <span class="d-none d-lg-block fs-3">goBooking</span>
+          </h1>
+        </a>
+        <h2 id="site-name" class="fs-5 ms-2 ms-lg-4 mb-0 fs-5">管理後台</h2>
+        <!-- PC header menu -->
+        <div class="user-menu-btns d-none d-lg-flex ms-auto pe-2">
+          <a class="menu-btn" href="#">
+            <i class="bi bi-person-fill"></i>
+            <span data-tooltips="帳號管理"></span>
+          </a>
+          <a class="menu-btn mx-3" href="#">
+            <i class="bi bi-door-open-fill"></i>
+            <span data-tooltips="登出"></span>
+          </a>
+        </div>
+        <!-- Burger -->
+        <input type="checkbox" id="burger-menu-checkbox" class="d-none">
+        <label for="burger-menu-checkbox" class="burger-menu-btn d-inline-block d-lg-none ms-auto">
+          <div class="burger d-flex flex-column d-lg-none">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+        <!-- Burger Menu in Mobile -->
+        <ul class="burger-menu px-5">
+          <li class="mt-3 mt-md-5"><a href="#" class="d-flex py-3 px-4"><i
+                class="bi bi-house-door me-3"></i><span>首頁</span></a></li>
+          <li><a href="#" class="d-flex py-3 px-4"><i class="bi bi-plus-square me-3"></i><span>新增場地</span></a>
+          </li>
+          <li><a href="#" class="d-flex py-3 px-4"><i class="bi bi-journal-text me-3"></i><span>場地管理</span></a>
+          </li>
+          <li><a href="#" class="d-flex py-3 px-4"><i class="bi bi-bag-check me-3"></i><span>訂單管理</span></a>
+          </li>
+          <li><a href="#" class="d-flex py-3 px-4"><i class="bi bi-tags me-3"></i><span>優惠管理</span></a>
+          </li>
+          <li><a href="#" class="d-flex py-3 px-4"><i class="bi bi-palette me-3"></i><span>風格管理</span></a></li>
+          <li><a href="#" class="d-flex py-3 px-4"><i class="bi bi-person me-3"></i><span>帳戶管理</span></a></li>
+        </ul>
+      </header>
+      <!-- Main Body -->
+      <div class="main-body d-flex">
+        <!-- Side Bar -->
+        <nav class="side-bar border-end d-none d-lg-block py-5">
+          <ul class="d-flex flex-wrap py-3">
+            <!-- REF: if need collapse, add the herf="id" & role="button" into the a tag-->
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="home-menu-pc"
+                class="toggle-btn d-flex py-2 fw-bolder px-4">
+                <i class="bi bi-house-door mx-2"></i>
+                <span class="ms-1">首頁</span>
+              </a>
+            </li>
+            <!-- Add Space -->
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="space-menu-detail-pc"
+                class="toggle-btn d-flex py-2 fw-bolder px-4">
+                <i class="bi bi-plus-square mx-2"></i>
+                <span class="ms-1">場地新增</span>
+              </a>
+            </li>
+            <!-- Space Management -->
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="space-menu-detail-pc"
+                class="toggle-btn d-flex py-2 fw-bolder px-4">
+                <i class="bi bi-journal-text mx-2"></i>
+                <span class="ms-1">場地管理</span>
+              </a>
+            </li>
+            <!-- Order Management -->
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="order-menu-pc"
+                class="toggle-btn d-flex py-2 fw-bolder px-4">
+                <i class="bi bi-bag-check mx-2"></i>
+                <span class="ms-1">訂單管理</span>
+              </a>
+            </li>
+            <!-- Discount Management -->
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="discount-menu-pc"
+                class="toggle-btn d-flex py-2 fw-bolder px-4">
+                <i class="bi bi-tags mx-2"></i>
+                <span class="ms-1">優惠管理</span>
+              </a>
+            </li>
+            <!-- Style Management -->
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="style-menu-pc"
+                class="toggle-btn d-flex py-2 fw-bolder px-4">
+                <i class="bi bi-palette mx-2"></i>
+                <span class="ms-1">風格管理</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Main Content -->
+        <div class="main-content flex-grow-1 py-3 px-2 p-md-4 p-xl-5">
+          <!-- Accordion -->
+          <div class="accordion" id="edit-space-accordion">
+            <!-- Space Info Tab -->
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header" id="info-title">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#info-content"
+                  aria-expanded="true" aria-controls="info-content">
+                  <span class="fs-5"><i class="bi bi-info-circle me-3"></i>空間資訊</span>
+                  <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
+                </button>
+              </h2>
+              <div id="info-content" class="accordion-collapse collapse show" aria-labelledby="info-title"
+                data-bs-parent="#edit-space-accordion">
+                <div class="accordion-body py-4 px-3 px-lg-5">
+                  <!-- Space Info: Name -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">空間名稱</div>
+                    <div class="col-12 col-lg-10">
+                      <input type="text" class="form-control" id="space-name">
+                    </div>
+                  </div>
+                  <!-- Space Info: Address -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">空間地址</div>
+                    <div class="col-12 col-lg-10">
+                      <div class="row gx-1">
+                        <div class="col-6 col-lg-3 mb-2 mb-lg-0">
+                          <select class="form-select" id="city">
+                            <option selected>縣市</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-2 mb-lg-0">
+                          <select class="form-select" id="district">
+                            <option selected>鄉鎮區</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                          <input type="text" class="form-control" id="address">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Space Info: Descrtiption -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">簡短介紹</div>
+                    <div class="col-12 col-lg-10 d-lg-flex align-items-end">
+                      <textarea class="form-control" id="brief-description" row="3"></textarea>
+                      <span class="words-counter d-block text-end mt-1 text-invalid">0/50</span>
+                    </div>
+                  </div>
+                  <!-- Space Info: Activities -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">適合活動</div>
+                    <div class="col-12 col-lg-10">
+                      <div class="row">
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="studying" value="0">
+                          <label class="form-check-label" for="studying">讀書會</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="meeting" value="1">
+                          <label class="form-check-label" for="meeting">會議訪談</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="shooting" value="2">
+                          <label class="form-check-label" for="shooting">拍照攝影</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="training" value="3">
+                          <label class="form-check-label" for="training">教育訓練</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="counseling" value="4">
+                          <label class="form-check-label" for="counseling">心靈諮商</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="presenting" value="5">
+                          <label class="form-check-label" for="presenting">發表會</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="recording" value="6">
+                          <label class="form-check-label" for="recording">錄音室</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="party" value="7">
+                          <label class="form-check-label" for="party">聚會派對</label>
+                        </div>
+                        <div class="col-6 col-md-3 mb-2">
+                          <input class="form-check-input me-1" type="checkbox" id="other" value="8">
+                          <label class="form-check-label" for="other">其他</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Space Info: Photo Upload -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">空間照片</div>
+                    <div class="col-12 col-lg-10">
+                      <div class="row g-3" id="upload-zone">
+                        <!-- Phote -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                          <div class="thumbnail rounded"
+                            style="background-image: url(https://picsum.photos/700/320/?random=5);">
+                            <i class="delete-photo bi bi-x-circle-fill"></i>
+                          </div>
+                        </div> <!-- Phote -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                          <div class="thumbnail rounded"
+                            style="background-image: url(https://picsum.photos/700/320/?random=5);">
+                            <i class="delete-photo bi bi-x-circle-fill"></i>
+                          </div>
+                        </div> <!-- Phote -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                          <div class="thumbnail rounded"
+                            style="background-image: url(https://picsum.photos/700/320/?random=5);">
+                            <i class="delete-photo bi bi-x-circle-fill"></i>
+                          </div>
+                        </div> <!-- Phote -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                          <div class="thumbnail rounded"
+                            style="background-image: url(https://picsum.photos/700/320/?random=5);">
+                            <i class="delete-photo bi bi-x-circle-fill"></i>
+                          </div>
+                        </div>
+                        <!-- Phote -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                          <div class="thumbnail rounded"
+                            style="background-image: url(https://picsum.photos/700/320/?random=5);">
+                            <i class="delete-photo bi bi-x-circle-fill"></i>
+                          </div>
+                        </div>
+                        <!-- Upload Button -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                          <input type="file" class="d-none" id="image-upload" multiple accept="image/*">
+                          <div class="thumbnail add-photo rounded" id="file-select">
+                            <img src="../img/icons/add.png" alt="加入圖片">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Price Info Tab -->
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header" id="price-title">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#price-content" aria-expanded="true" aria-controls="price-content">
+                  <span class="fs-5"><i class="bi bi-tag me-3"></i>時租定價</span>
+                  <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
+                </button>
+              </h2>
+              <div id="price-content" class="accordion-collapse collapse" aria-labelledby="price-title"
+                data-bs-parent="#edit-space-accordion">
+                <div class="accordion-body py-4 px-3 px-lg-5">
+                  <!-- Price Info: Basic Info -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">空間限制</div>
+                    <div class="col-6 col-lg-5 float-input">
+                      <input type="text" class="form-control mb-2 mb-lg-0" id="volumn" placeholder="建議人數">
+                      <span class="float-text"></span>
+                    </div>
+                    <div class="col-6 col-lg-5 float-input">
+                      <input type="text" class="form-control mb-2 mb-lg-0" id="min-hour" placeholder="最短租時">
+                      <span class="float-text"></span>
+                    </div>
+                  </div>
+                  <!-- Price Info: Price of Usage -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">用途定價</div>
+                    <div class="col-12 col-lg-10" id="usage-node">
+                      <!-- Usage -->
+                      <div class="usage row gx-1 mb-2">
+                        <div class="col-7 col-lg-6 flex-grow-1">
+                          <input type="text" class="usage form-control" placeholder="空間用途">
+                        </div>
+                        <div class="col-3 col-lg-4 flex-grow-1 float-input">
+                          <input type="text" class="unit-price form-control" placeholder="單價">
+                          <span class="float-text"></span>
+                        </div>
+                        <i class="add-btn bi bi-plus-circle-fill ms-2" id="usage-add"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Price Info: Operating Time -->
+                  <div class="row gx-1 mb-3 mb-lg-4">
+                    <div class="col-12 col-lg-2 col-form-label">營業時間</div>
+                    <div class="col-12 col-lg-10">
+                      <div class="row gx-1 mb-4" id="mon">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期一</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row gx-1 mb-4" id="tue">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期二</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row gx-1 mb-4" id="wed">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期三</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row gx-1 mb-4" id="thu">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期四</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row gx-1 mb-4" id="fri">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期五</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row gx-1 mb-4" id="sat">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期六</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row gx-1" id="sun">
+                        <span class="col-4 col-lg-2 mb-2 mb-lg-0 d-flex align-items-center">星期日</span>
+                        <div
+                          class="col-8 col-lg-3 mb-2 mb-lg-0 form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                          <input class="form-check-input day-check" type="checkbox" role="switch">
+                          <label class="form-check-label toggle-switch-text text-end ms-2">營業</label>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select start-time invisible">
+                            <option selected>開始時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-lg-3 flex-grow-1">
+                          <select class="form-select end-time invisible">
+                            <option selected>結束時間</option>
+                            <option value="1">One</option>
+                            <option value="2">兩孔插座</option>
+                            <option value="3">三孔插座</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Amenity Info -->
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header" id="amenity-title">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#amenity-content" aria-expanded="true" aria-controls="amenity-content">
+                  <span class="fs-5"><i class="bi bi-easel me-3"></i>設施設備</span>
+                  <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
+                </button>
+              </h2>
+              <div id="amenity-content" class="accordion-collapse collapse" aria-labelledby="amenity-title"
+                data-bs-parent="#edit-space-accordion">
+                <div class="accordion-body py-4 px-3 px-lg-5">
+                  <!-- Default Amenity List -->
+                  <div class="row mb-3 mb-lg-4">
+                    <span class="col-12 col-lg-2 col-form-label">基礎設備</span>
+                    <div class="col-12 col-lg-10">
+                      <div class="row gx-1" id="default-amenity-node">
+                        <!-- Default Amenity -->
+                        <div class="col-12 col-md-6 mb-2">
+                          <div class="row gx-1 align-items-center">
+                            <div class="col-6 flex-grow-1">
+                              <select class="form-select">
+                                <option selected>選擇設備</option>
+                                <option value="1">One</option>
+                                <option value="2">兩孔插座</option>
+                                <option value="3">三孔插座</option>
+                              </select>
+                            </div>
+                            <div class="col-3 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="數量">
+                            </div>
+                            <div class="col-1 ms-1 me-2">
+                              <i class="add-btn bi bi-plus-circle-fill" id="default-amenity-add"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Other Amenity List -->
+                  <div class="row mb-3 mb-lg-4">
+                    <span class="col-12 col-lg-2 col-form-label">自訂設備</span>
+                    <div class="col-12 col-lg-10">
+                      <div class="row gx-1" id="other-amenity-node">
+                        <!-- Other Amenity -->
+                        <div class="col-12 col-md-6 mb-2">
+                          <div class="row gx-1 align-items-center">
+                            <div class="col-6 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="設備名稱">
+                            </div>
+                            <div class="col-3 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="數量">
+                            </div>
+                            <div class="col-1 ms-1 me-2">
+                              <i class="add-btn bi bi-plus-circle-fill" id="other-amenity-add"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Recording Gear List -->
+                  <div class="row mb-lg-2">
+                    <span class="col-6 col-lg-2 col-form-label">錄音設備</span>
+                    <div class="col-6 col-lg-10">
+                      <div
+                        class="form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                        <input class="form-check-input mt-0" type="checkbox" role="switch" id="recording-provide-check">
+                        <label class="form-check-label toggle-switch-text text-end ms-2">免費提供</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3 mb-lg-4">
+                    <span class="col-6 col-lg-2 col-form-label d-none d-lg-block"></span>
+                    <div class="col-12 col-lg-10">
+                      <div class="row gx-1 d-none" id="recording-gear-node">
+                        <!-- Recording Gear -->
+                        <div class="col-12 col-md-6 mb-3">
+                          <div class="row gx-1 align-items-center">
+                            <div class="col-6 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="設備名稱">
+                            </div>
+                            <div class="col-3 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="數量">
+                            </div>
+                            <div class="col-1 ms-1 me-2">
+                              <i class="add-btn bi bi-plus-circle-fill" id="recording-gear-add"></i>
+                            </div>
+                            <div class="col-12">
+                              <div class="row gx-1 mt-1">
+                                <div class="col-9 flex-grow-1">
+                                  <input type="text" class="form-control" placeholder="品牌">
+                                </div>
+                                <div class="col-1 ms-1 me-2"></div>
+                              </div>
+                              <div class="row gx-1 mt-1">
+                                <div class="col-9 flex-grow-1">
+                                  <input type="text" class="form-control" placeholder="型號">
+                                </div>
+                                <div class="col-1 ms-1 me-2"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Rentable Gear Lsit -->
+                  <div class="row mb-lg-2">
+                    <span class="col-6 col-lg-2 col-form-label">設備租借</span>
+                    <div class="col-6 col-lg-10">
+                      <div
+                        class="form-check form-switch d-flex justify-content-end justify-content-lg-start align-items-center">
+                        <input class="form-check-input mt-0" type="checkbox" role="switch" id="rent-check">
+                        <label class="form-check-label toggle-switch-text text-end ms-2">可供租借</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3 mb-lg-4">
+                    <span class="col-6 col-lg-2 col-form-label d-none d-lg-block"></span>
+                    <div class="col-12 col-lg-10">
+                      <div class="row gx-1 d-none" id="rentable-gear-node">
+                        <!-- Rentable Gear -->
+                        <div class="col-12 col-md-6 mb-3">
+                          <div class="row gx-1 align-items-center">
+                            <div class="col-9 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="設備名稱">
+                            </div>
+                            <div class="col-1 ms-1 me-2">
+                              <i class="add-btn bi bi-plus-circle-fill" id="rentable-gear-add"></i>
+                            </div>
+                          </div>
+                          <div class="row gx-1 align-items-center mt-1">
+                            <div class="col-4 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="數量">
+                            </div>
+                            <div class="col-4 flex-grow-1">
+                              <input type="text" class="form-control" placeholder="單價">
+                            </div>
+                            <div class="col-1 ms-1 me-2"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Rules Info -->
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header" id="rules-title">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#rules-content" aria-expanded="true" aria-controls="rules-content">
+                  <span class="fs-5"><i class="bi bi-exclamation-square me-3"></i>場地公約</span>
+                  <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
+                </button>
+              </h2>
+              <div id="rules-content" class="accordion-collapse collapse" aria-labelledby="rules-title"
+                data-bs-parent="#edit-space-accordion">
+                <div class="accordion-body py-4 px-3 px-lg-5">
+                  <div class="space-rule row mb-3 mb-lg-4">
+                    <span class="col-12 col-lg-2 col-form-label">場地公約<br class="d-none d-lg-block"><span
+                        class="deco-text ms-1 ms-lg-0">(至多10項)</span></span>
+                    <div class="col-12 col-lg-10">
+                      <div class="row">
+                        <div class="col-12 col-md-6 d-flex mb-2">
+                          <textarea class="form-control mb-2" row="3"></textarea>
+                          <span class="close-btn ms-2"><i class="bi bi-x-circle"></i></span>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex mb-2">
+                          <textarea class="form-control mb-2" row="3"></textarea>
+                          <span class="close-btn ms-2"><i class="bi bi-x-circle"></i></span>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex mb-2">
+                          <textarea class="form-control mb-2" row="3"></textarea>
+                          <span class="close-btn ms-2"><i class="bi bi-x-circle"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Highlight Info -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="description-title">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#description-content" aria-expanded="true" aria-controls="description-content">
+                  <span class="fs-5"><i class="bi bi-lightbulb me-3"></i>場地特點</span>
+                  <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
+                </button>
+              </h2>
+              <div id="description-content" class="accordion-collapse collapse" aria-labelledby="description-title"
+                data-bs-parent="#edit-space-accordion">
+                <div class="accordion-body py-4 px-3 px-lg-5" id="editor">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer id="footer" class="footer text-center py-3 mt-auto">
+        © 2019 - <span id="copyright-year">{{ thisYear }}</span> Ｍiézo Inc. | All Rights Reserved
+      </footer>
+    </div>
+  </div>
+
+
+  <!-- Photo Template-->
+  <template id="photo-template">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="thumbnail rounded">
+        <i class="close-btn bi bi-x-circle"></i>
+      </div>
+    </div>
+  </template>
+  <!-- Usage Template -->
+  <template id="usage-template">
+    <div class="usage row gx-1 mb-2">
+      <div class="col-7 col-lg-6 flex-grow-1">
+        <input type="text" class="usage form-control mb-2 mb-lg-0" id="usage-1" placeholder="空間用途">
+      </div>
+      <div class="col-3 col-lg-4 flex-grow-1 float-input">
+        <input type="text" class="unit-price form-control mb-2 mb-lg-0" id="price-1" placeholder="單價">
+        <span class="float-text"></span>
+      </div>
+      <i class="close-btn bi bi-x-circle-fill ms-2"></i>
+    </div>
+  </template>
+  <!-- Default Amenity Template -->
+  <template id="default-amenity-template">
+    <div class="col-12 col-md-6 mb-2">
+      <div class="row gx-1 align-items-center">
+        <div class="col-6 flex-grow-1">
+          <select class="form-select">
+            <option selected>選擇設備</option>
+            <option value="1">One</option>
+            <option value="2">兩孔插座</option>
+            <option value="3">三孔插座</option>
+          </select>
+        </div>
+        <div class="col-3 flex-grow-1">
+          <input type="text" class="form-control" placeholder="數量">
+        </div>
+        <div class="col-1 ms-1 me-2">
+          <i class="close-btn bi bi-x-circle-fill"></i>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- Other Amenity Template -->
+  <template id="other-amenity-template">
+    <div class="col-12 col-md-6 mb-2">
+      <div class="row gx-1 align-items-center">
+        <div class="col-6 flex-grow-1">
+          <input type="text" class="form-control" placeholder="設備名稱">
+        </div>
+        <div class="col-3 flex-grow-1">
+          <input type="text" class="form-control" placeholder="數量">
+        </div>
+        <div class="col-1 ms-1 me-2">
+          <i class="close-btn bi bi-x-circle-fill"></i>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- Recording Gear Template -->
+  <template id="recording-gear-template">
+    <div class="col-12 col-md-6 mb-3">
+      <div class="row gx-1 align-items-center">
+        <div class="col-6 flex-grow-1">
+          <input type="text" class="form-control" placeholder="設備名稱">
+        </div>
+        <div class="col-3 flex-grow-1">
+          <input type="text" class="form-control" placeholder="數量">
+        </div>
+        <div class="col-1 ms-1 me-2">
+          <i class="close-btn bi bi-x-circle-fill"></i>
+        </div>
+        <div class="col-12">
+          <div class="row gx-1 mt-1">
+            <div class="col-9 flex-grow-1">
+              <input type="text" class="form-control" placeholder="數量">
+            </div>
+            <div class="col-1 ms-1 me-2"></div>
+          </div>
+          <div class="row gx-1 mt-1">
+            <div class="col-9 flex-grow-1">
+              <input type="text" class="form-control" placeholder="數量">
+            </div>
+            <div class="col-1 ms-1 me-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- Rentable Gear Template -->
+  <template id="rentable-gear-template">
+    <div class="col-12 col-md-6 mb-3">
+      <div class="row gx-1 align-items-center">
+        <div class="col-9 flex-grow-1">
+          <input type="text" class="form-control" placeholder="設備名稱">
+        </div>
+        <div class="col-1 ms-1 me-2">
+          <i class="close-btn bi bi-x-circle-fill"></i>
+        </div>
+      </div>
+      <div class="row gx-1 align-items-center mt-1">
+        <div class="col-4 flex-grow-1">
+          <input type="text" class="form-control" placeholder="數量">
+        </div>
+        <div class="col-4 flex-grow-1">
+          <input type="text" class="form-control" placeholder="單價">
+        </div>
+        <div class="col-1 ms-1 me-2"></div>
+      </div>
+    </div>
+  </template>
+
+
+  <!-- vue js -->
+  <script src="../../vendors/vuejs/vue.global.js"></script>
+  <!-- bootstrap js -->
+  <script src="../../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- axios js -->
+  <script src="../../vendors/axios/axios.min.js"></script>
+  <!-- ckeditor -->
+  <script src="../../vendors/ckeditor/ckeditor.js"></script>
+  <!-- my js -->
+  <script src="../shared/js/layout.js"></script>
+  <script src="../js/edit-space.js"></script>
+  <script>
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .then(editor => {
+        console.log(editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+</body>
+
+</html>

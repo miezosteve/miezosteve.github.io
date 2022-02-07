@@ -1,0 +1,48 @@
+@mixin control-btn($position: static, $top: 0, $right: 0, $font-size: 1.4rem, $color: #fff) {
+  position: $position;
+  top: $top;
+  right: $right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  font-size: $font-size;
+  color: $color;
+  cursor: pointer;
+
+  &::before {
+    background-color: #fff;
+  }
+}
+
+@mixin add-btn($position: static, $top: 0, $right: 0, $font-size: 1.4rem) {
+  position: $position;
+  top: $top;
+  right: $right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: auto;
+  font-size: $font-size;
+  color: rgba(0, 135, 235, 0.9);
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 1px 1px 0.5px rgba(128, 128, 128, 0.3);
+
+  &::before {
+    background-color: #fff;
+  }
+}
+
+@mixin float-text($content) {
+  &::after {
+    position: absolute;
+    top: 0.2rem;
+    right: 0;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    color: #ccc;
+    content: $content;
+  }
+}

@@ -1,0 +1,112 @@
+* {
+  color: inherit;
+}
+
+html {
+  color: #2c3136;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button:focus,
+input[type="checkbox"]:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(4, 113, 221, 0.6) !important;
+          box-shadow: 0 0 0 0.1rem rgba(4, 113, 221, 0.6) !important;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  font-size: 0.9rem;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  font-size: 0.9rem;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  font-size: 0.9rem;
+}
+
+input[type="text"]::placeholder {
+  font-size: 0.9rem;
+}
+
+.col-form-label {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.form-check {
+  margin-bottom: 0;
+}
+
+.form-check-input:checked {
+  background-color: rgba(0, 135, 235, 0.9);
+  border: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+@media (max-height: 830px) {
+  .main-body .side-bar {
+    padding-top: 1.3rem !important;
+    padding-bottom: 1.3rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-body .side-bar .sidebar-item {
+    cursor: pointer;
+  }
+  .main-body .side-bar .sidebar-item .toggle-btn {
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+    color: rgba(90, 90, 90, 0.9);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .main-body .side-bar .sidebar-item .toggle-btn > i {
+    font-size: 1.2rem;
+  }
+  .main-body .side-bar .sidebar-item .toggle-btn:hover {
+    color: #9cd6cc;
+  }
+  .main-body .side-bar .sidebar-item .toggle-btn:hover::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.2rem;
+    height: 80%;
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    content: "";
+    background-color: #9cd6cc;
+  }
+}
+/*# sourceMappingURL=sidebar.css.map */

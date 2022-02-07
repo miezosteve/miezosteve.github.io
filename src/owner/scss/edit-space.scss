@@ -1,0 +1,252 @@
+@import "../shared/scss/global";
+@import "../shared/scss/colors";
+@import "../shared/scss/variables";
+@import "../shared/scss/mixin";
+
+.accordion {
+  .accordion-item {
+    overflow: hidden;
+    border-color: rgba(228, 228, 228, 0.6);
+    border-radius: 0.5rem;
+
+    .accordion-button {
+      color: inherit;
+      background-color: rgba(228, 228, 228, 0.6);
+
+      & > button:focus {
+        box-shadow: none;
+      }
+
+      & > i {
+        transform: rotate(0);
+        transition: 0.3s;
+      }
+
+      &:not(.collapsed) {
+        color: #fff;
+        background-color: $main-blue;
+
+        & > i {
+          transform: rotate(-180deg);
+          transition: 0.3s;
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    // .accordion-body {
+    //   .input-text {
+    //     color: rgba(59, 59, 59, 0.9);
+    //   }
+
+    //   .deco-text {
+    //     font-size: 0.8rem;
+    //     color: #ccc;
+    //   }
+
+    //   .upload-zone {
+    //     #add-photo,
+    //     .thumbnail {
+    //       position: relative;
+    //       padding-top: 56.25%;
+    //       width: 100%;
+    //       background-position: center center;
+    //       background-repeat: no-repeat;
+    //       background-size: contain;
+    //       border-radius: 1rem;
+    //     }
+
+    //     #add-photo {
+    //       background-color: #ccc;
+    //       cursor: pointer;
+    //     }
+
+    //     .close-btn {
+    //       @include my-close-btn($position: absolute, $top: 0, $right: 0.5rem);
+    //     }
+
+    //     .cross {
+    //       position: absolute;
+    //       top: 50%;
+    //       left: 50%;
+    //       transform: translate(-50%, -50%);
+    //       width: 35%;
+    //     }
+    //   }
+
+    //   .price-card {
+    //     .weekday {
+    //       .form-check-label::after {
+    //         content: "無營業";
+    //         color: #ccc;
+    //       }
+
+    //       .form-check-input:checked + .form-check-label::after {
+    //         content: "有營業";
+    //         color: $main-blue;
+    //       }
+    //     }
+
+    //     .float-input {
+    //       position: relative;
+
+    //       .float-text {
+    //         position: absolute;
+    //         bottom: 20%;
+    //         right: 0.8rem;
+    //         font-size: 0.8rem;
+    //         color: #ccc;
+    //         background-color: transparent;
+    //         user-select: none;
+    //       }
+    //     }
+    //   }
+
+    //   .form-switch {
+    //     .form-check-input {
+    //       width: 2.5em;
+    //       height: 1.2em;
+    //     }
+    //   }
+
+    //   .close-btn {
+    //     @include my-close-btn($font-size: 1rem);
+    //   }
+
+    //   .deco-line::after {
+    //     display: block;
+    //     margin: calc(1rem + 1px) 0.75rem 0;
+    //     width: 100%;
+    //     height: 1px;
+    //     background-color: #ccc;
+    //     content: "";
+    //   }
+
+    //   .space-rule {
+    //     textarea.form-control {
+    //       min-height: 6.5rem;
+    //     }
+
+    //     .close-btn {
+    //       @include my-close-btn($font-size: 1rem);
+    //     }
+    //   }
+
+    //   .add-btn {
+    //     color: #fff;
+    //     background-color: $main-blue;
+    //   }
+
+    //   #recording-or-not:not(:checked) ~ .form-check-label {
+    //     color: #ccc;
+    //   }
+    // }
+  }
+
+  .accordion-body {
+    .input-invalid {
+      box-shadow: 0 0 0 0.1rem $main-red !important;
+    }
+
+    .text-invalid {
+      color: $main-red !important;
+    }
+
+    .col-form-label {
+      font-size: 1.1rem;
+      color: $main-font-color;
+    }
+
+    .words-counter {
+      min-width: 7%;
+      font-size: 0.9rem;
+      color: $deco-gray;
+    }
+
+    .thumbnail {
+      position: relative;
+      padding-top: 75%;
+      width: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: $deco-gray;
+
+      &.add-photo {
+        cursor: pointer;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 40%;
+        }
+      }
+
+      .delete-photo {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: auto;
+        font-size: 1.4rem;
+        color: rgba(255, 0, 0, 0.8);
+        border-radius: 100%;
+        cursor: pointer;
+        box-shadow: 1px 1px 0.5px rgba(128, 128, 128, 0.3);
+
+        &::before {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .float-input {
+      position: relative;
+
+      #volumn + .float-text {
+        @include float-text($content: "人");
+      }
+
+      #min-hour + .float-text {
+        @include float-text($content: "小時");
+      }
+    }
+
+    .add-btn {
+      @include control-btn($font-size: 1.2rem ,$color: rgba(0, 135, 235, 0.9));
+    }
+
+    .close-btn {
+      @include control-btn($font-size: 1.2rem ,$color: rgba(255, 0, 0, 0.8));
+    }
+
+    .toggle-switch-text {
+      font-size: 1rem;
+      color: $deco-gray;
+    }
+
+    .day-check:checked ~ .toggle-switch-text,
+    #recording-provide-check:checked ~ .toggle-switch-text,
+    #rent-check:checked ~ .toggle-switch-text {
+      color: $main-blue;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .accordion {
+    .accordion-body {
+      .thumbnail {
+        padding-top: 60%;
+      }
+    }
+  }
+}

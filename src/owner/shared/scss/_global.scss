@@ -1,0 +1,56 @@
+* {
+  color: inherit;
+}
+
+html {
+  color: #2c3136;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button:focus,
+input[type="checkbox"]:focus {
+  box-shadow: none !important;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 0.1rem rgba(4, 113, 221, 0.6) !important;
+}
+
+input[type="text"]::placeholder {
+  font-size: 0.9rem;
+}
+
+.col-form-label {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.form-check {
+  margin-bottom: 0;
+}
+
+.form-check-input:checked {
+  background-color: rgba(0, 135, 235, 0.9);
+  border: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}

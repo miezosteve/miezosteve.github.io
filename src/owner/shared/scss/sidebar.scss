@@ -1,0 +1,50 @@
+@import "../../shared/scss/colors";
+@import "../../shared/scss/global";
+
+// 小筆電沒縮放時不要有捲軸(Macbook Pro)
+@media (max-height: 830px) {
+  .main-body {
+    .side-bar {
+      padding-top: 1.3rem !important;
+      padding-bottom: 1.3rem !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .main-body {
+    .side-bar {
+      .sidebar-item {
+        cursor: pointer;
+
+        .toggle-btn {
+          position: relative;
+          align-items: center;
+          font-size: 1rem;
+          color: rgba(90, 90, 90, 0.9);
+          transition: 0.3s;
+
+          & > i {
+            font-size: 1.2rem;
+          }
+
+          &:hover {
+            color: $main-green;
+
+            &::after {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              width: 0.2rem;
+              height: 80%;
+              transform: translateY(10%);
+              content: "";
+              background-color: $main-green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
