@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" href="../img/miezo-ico.ico" type="image/x-icon">
   <!-- bootstrap css -->
   <link rel="stylesheet" href="../../vendors/bootstrap/bootstrap.min.css">
@@ -233,7 +233,7 @@
                             style="background-image: url(https://picsum.photos/700/320/?random=5);">
                             <i class="delete-photo bi bi-x-circle-fill"></i>
                           </div>
-                        </div> <!-- Phote -->
+                        </div> <!-- Photo -->
                         <div class="col-12 col-md-6 col-lg-4">
                           <div class="thumbnail rounded"
                             style="background-image: url(https://picsum.photos/700/320/?random=5);">
@@ -301,15 +301,17 @@
                     <div class="col-12 col-lg-2 col-form-label">用途定價</div>
                     <div class="col-12 col-lg-10" id="usage-node">
                       <!-- Usage -->
-                      <div class="usage row gx-1 mb-2">
-                        <div class="col-7 col-lg-6 flex-grow-1">
+                      <div class="usage row gx-1 mb-2 align-items-stretch">
+                        <div class="col-6 flex-grow-1">
                           <input type="text" class="usage form-control" placeholder="空間用途">
                         </div>
-                        <div class="col-3 col-lg-4 flex-grow-1 float-input">
+                        <div class="col-3 flex-grow-1 float-input">
                           <input type="text" class="unit-price form-control" placeholder="單價">
                           <span class="float-text"></span>
                         </div>
-                        <i class="add-btn bi bi-plus-circle-fill ms-2" id="usage-add"></i>
+                        <div class="col-1 d-flex align-items-stretch justify-content-center" id="usage-add">
+                          <i class="add-btn bi bi-plus-circle-fill flex-grow-1"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -543,8 +545,8 @@
                             <div class="col-3 flex-grow-1">
                               <input type="text" class="form-control" placeholder="數量">
                             </div>
-                            <div class="col-1 ms-1 me-2">
-                              <i class="add-btn bi bi-plus-circle-fill" id="other-amenity-add"></i>
+                            <div class="col-1 ms-1 me-2" id="other-amenity-add">
+                              <i class="add-btn bi bi-plus-circle-fill"></i>
                             </div>
                           </div>
                         </div>
@@ -575,8 +577,8 @@
                             <div class="col-3 flex-grow-1">
                               <input type="text" class="form-control" placeholder="數量">
                             </div>
-                            <div class="col-1 ms-1 me-2">
-                              <i class="add-btn bi bi-plus-circle-fill" id="recording-gear-add"></i>
+                            <div class="col-1 ms-1 me-2" id="recording-gear-add">
+                              <i class="add-btn bi bi-plus-circle-fill"></i>
                             </div>
                             <div class="col-12">
                               <div class="row gx-1 mt-1">
@@ -618,8 +620,8 @@
                             <div class="col-9 flex-grow-1">
                               <input type="text" class="form-control" placeholder="設備名稱">
                             </div>
-                            <div class="col-1 ms-1 me-2">
-                              <i class="add-btn bi bi-plus-circle-fill" id="rentable-gear-add"></i>
+                            <div class="col-1 ms-1 me-2" id="rentable-gear-add">
+                              <i class="add-btn bi bi-plus-circle-fill"></i>
                             </div>
                           </div>
                           <div class="row gx-1 align-items-center mt-1">
@@ -774,13 +776,13 @@
         <div class="col-12">
           <div class="row gx-1 mt-1">
             <div class="col-9 flex-grow-1">
-              <input type="text" class="form-control" placeholder="數量">
+              <input type="text" class="form-control" placeholder="品牌">
             </div>
             <div class="col-1 ms-1 me-2"></div>
           </div>
           <div class="row gx-1 mt-1">
             <div class="col-9 flex-grow-1">
-              <input type="text" class="form-control" placeholder="數量">
+              <input type="text" class="form-control" placeholder="型號">
             </div>
             <div class="col-1 ms-1 me-2"></div>
           </div>

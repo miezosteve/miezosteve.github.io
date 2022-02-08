@@ -29,7 +29,7 @@
     const startTime = document.querySelectorAll('.start-time')[index];
     const endTime = document.querySelectorAll('.end-time')[index];
 
-    day.addEventListener('change', (e) => {
+    day.addEventListener('change', () => {
       startTime.classList.toggle('invisible');
       endTime.classList.toggle('invisible');
       day.blur();

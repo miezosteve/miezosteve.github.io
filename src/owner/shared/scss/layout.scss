@@ -49,14 +49,17 @@ ol {
   }
 
   #burger-menu-checkbox:checked ~ .burger-menu {
+    overflow: hidden;
     height: calc(100vh - 50px);
     max-height: calc(100vh - 50px);
     transition: 0.5s ease-in-out;
   }
 
   .burger {
+    box-sizing: content-box;
     align-items: center;
     justify-content: space-evenly;
+    padding: 0.5rem 0.25rem;
     width: 1.3rem;
 
     span {

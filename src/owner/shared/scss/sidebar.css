@@ -6,6 +6,11 @@ html {
   color: #2c3136;
 }
 
+body > * {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
 img {
   display: block;
   max-width: 100%;
