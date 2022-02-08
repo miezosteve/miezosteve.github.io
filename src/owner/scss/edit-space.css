@@ -282,7 +282,7 @@ a:hover {
   color: rgba(0, 135, 235, 0.9);
 }
 
-.accordion .accordion-body .rule {
+.accordion .accordion-body .rule-input {
   min-height: 6rem;
 }
 
