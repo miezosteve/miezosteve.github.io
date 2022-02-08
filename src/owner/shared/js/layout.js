@@ -4,7 +4,14 @@
   const activeBurgerBtn = () => {
     burgerBtn.classList.toggle('active');
   };
-  burgerBtn.addEventListener('click', activeBurgerBtn);
+  const setBodyOverflow = () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('overflow-hidden');
+  };
+  burgerBtn.addEventListener('click', () => {
+    activeBurgerBtn();
+    setBodyOverflow();
+  });
 
   const thisYear = {
     data() {
