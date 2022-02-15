@@ -28,6 +28,14 @@ select:focus,
   box-shadow: 0 0 0 0.1rem rgba(4, 113, 221, 0.6) !important;
 }
 
+textarea {
+  resize: none;
+}
+
+input::placeholder {
+  user-select: none;
+}
+
 input[type="text"]::placeholder {
   font-size: 0.9rem;
 }

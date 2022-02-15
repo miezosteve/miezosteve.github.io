@@ -1,97 +1,212 @@
-// eslint-disable-next-line func-names
-(function () {
+/* eslint-disable prefer-const */
+/* eslint-disable no-unused-vars */
+
+// #region ===Global Function===
+function setItemDataSet(itemName = '') {
+  const itemList = document.querySelectorAll(`.${itemName}`);
+  itemList.forEach((item, index) => {
+    item.setAttribute(`data-${itemName}`, index);
+  });
+}
+
+function setBtnDataSet(itemName = '') {
+  const btnList = document.querySelectorAll(`.${itemName} .control-btn`);
+  btnList.forEach((item, index) => {
+    item.setAttribute(`data-${itemName}-btn`, index);
+  });
+}
+
+function appendTemplate(el, itemName = '') {
+  const templateId = `#${itemName}-template`;
+  const nodeId = `${itemName}-node`;
+  const itemIndex = document.querySelectorAll(`.${itemName}`).length;
+
+  const clone = document.querySelector(templateId).content.cloneNode(true);
+  document.querySelector(`#${nodeId}`).appendChild(clone);
+  setItemDataSet(itemName);
+  setBtnDataSet(itemName);
+}
+
+function removeElement(el, itemName = '') {
+  const nodeId = `#${itemName}-node`;
+  const itemIndex = el.getAttribute(`data-${itemName}-btn`);
+  const targetItem = document.querySelectorAll(`.${itemName}`)[itemIndex];
+  document.querySelector(nodeId).removeChild(targetItem);
+  setItemDataSet(itemName);
+  setBtnDataSet(itemName);
+}
+
+function wordsCounter(el, parentId = '') {
+  const wordsCount = el.value.trim().length;
+  const counter = document.querySelector(`#${parentId} .words-counter`);
+  const maxCount = el.getAttribute('maxlength');
+  counter.innerText = `${wordsCount}/${maxCount}`;
+
+  if (wordsCount === +maxCount) {
+    el.classList.toggle('input-invalid');
+  }
+}
+// #endregion
+
+// #region ===空間資訊===
+const info = {
+  name: '',
+  location: {
+    city: '',
+    district: '',
+    address: '',
+  },
+  description: '',
+  activities: [],
+  photo: [],
+};
+// ---名稱
+function spaceNameHandler(el) {
+
+}
+
+// ---地址
+function cityHandler(el) {
+
+}
+function districtHandler(el) {
+
+}
+function addressHandler(el) {
+
+}
+
+// ---介紹
+function descriptionHandler(el) {
+
+}
+function descriptionWordsCounter(el) {
+  wordsCounter(el, 'info-content');
+}
+
+// ---活動
+function activityHandler(el) {
+  const { activities } = info;
+  if (!activities.includes(el.value)) {
+    activities.push(el.value);
+    return;
+  }
+
+  const idx = activities.indexOf(el.value);
+  activities.splice(idx, 1);
+}
+
+// ---照片
+const uploadZone = document.querySelector('#upload-zone');
+function uploadHandler(e) {
   const imageUpload = document.querySelector('#image-upload');
-  const fileSelectBtn = document.querySelector('#file-select');
-  const uploadZone = document.querySelector('#upload-zone');
-
-  const getElementIndex = (elementSelector = '') => document.querySelectorAll(elementSelector).length - 1;
-
-  // 加入元素
-  const addElement = (elementSelector = '', templateSelector = '', nodeSelector = '') => {
-    const clone = document.querySelector(templateSelector).content.cloneNode(true);
-    const node = document.querySelector(nodeSelector);
-    node.appendChild(clone);
-
-    const addedElement = document.querySelector(`${elementSelector}:last-child`);
-    const addedElementBtn = addedElement.querySelector('.close-btn');
-    const elementIndex = getElementIndex(elementSelector);
-    addedElement.setAttribute('data-element-index', `${elementIndex}`);
-    addedElementBtn.setAttribute('data-btn-index', `${elementIndex}`);
-  };
-
-  fileSelectBtn.addEventListener('click', (e) => {
-    imageUpload.click();
-    e.preventDefault();
+  imageUpload.click();
+  e.preventDefault();
+}
+function showThumbnail(files) {
+  const uploadBtn = document.querySelector('.upload-btn');
+  const fileArr = [...files];
+  const urlList = fileArr.map((file) => URL.createObjectURL(file));
+  urlList.forEach((url) => {
+    const clone = document.querySelector('#thumbnail-template').content.cloneNode(true);
+    const thumbnail = clone.querySelector('.thumbnail');
+    thumbnail.setAttribute('style', `background-image: url(${url})`);
+    uploadZone.insertBefore(clone, uploadBtn);
   });
+}
+function deleteThumbnail(el) {
+  uploadZone.removeChild(el.parentNode);
+}
+// #endregion
 
-  // 用途定價
-  // -- Add
-  const usageAddBtn = document.querySelector('#usage-add');
-  usageAddBtn.addEventListener('click', () => {
-    addElement('.usage', '#usage-template', '#usage-node');
-  });
+// #region ===時租定價===
+const cost = {
+  capacity: '',
+  minHour: '',
+  usageList: [],
+  operatingTime: [],
+};
 
-  // 營業時間
-  // -- Toggle
-  const dayNodeList = ['#mon', '#tue', '#wed', '#thu', '#fri', '#sat', '#sun'];
-  dayNodeList.forEach((node, index) => {
-    const day = document.querySelector(`${node} .day-check`);
-    const startTime = document.querySelectorAll('.start-time')[index];
-    const endTime = document.querySelectorAll('.end-time')[index];
+// ---空間限制
+function capacityHandler(el) {
 
-    day.addEventListener('change', () => {
-      startTime.classList.toggle('invisible');
-      endTime.classList.toggle('invisible');
-      day.blur();
-    });
-  });
+}
+function minHourHandler(el) {
 
-  // 基礎設備
-  // -- Add
-  const defaultAmenityAddBtn = document.querySelector('#default-amenity-add');
-  defaultAmenityAddBtn.addEventListener('click', () => {
-    addElement('.default-amenity', '#default-amenity-template', '#default-amenity-node');
-  });
+}
 
-  // 自訂設備
-  // -- Add
-  const otherAmenityAddBtn = document.querySelector('#other-amenity-add');
-  otherAmenityAddBtn.addEventListener('click', () => {
-    addElement('.other-amenity', '#other-amenity-template', '#other-amenity-node');
-  });
+// ---用途定價
+const newUsage = {
+  idx: 0,
+  forWhat: '',
+  unitPrice: '',
+};
+function usageHandler(el) {
 
-  // 錄音設備
-  // -- Toggle
-  const recordingToggle = document.querySelector('#recording-provide-check');
-  const recordingNode = document.querySelector('#recording-gear-node');
-  recordingToggle.addEventListener('change', () => {
-    recordingNode.classList.toggle('d-none');
-    recordingToggle.blur();
-  });
-  // -- Add
-  const recordingGearAddBtn = document.querySelector('#recording-gear-add');
-  recordingGearAddBtn.addEventListener('click', () => {
-    addElement('.recording-gear', '#recording-gear-template', '#recording-gear-node');
-  });
+}
 
-  // 設備租借
-  // -- Toggle
-  const rentToggle = document.querySelector('#rent-check');
-  const rentNode = document.querySelector('#rentable-gear-node');
-  rentToggle.addEventListener('change', () => {
-    rentNode.classList.toggle('d-none');
-    rentToggle.blur();
-  });
-  // -- Add
-  const rentableGearAddBtn = document.querySelector('#rentable-gear-add');
-  rentableGearAddBtn.addEventListener('click', () => {
-    addElement('.rentable-gear', '#rentable-gear-template', '#rentable-gear-node');
-  });
+// ---營業時間
+function timeSwitchHandler(el) {
+  const day = el.parentNode.parentNode.id;
+  const startTimeSelect = document.querySelector(`#${day} .start-time`);
+  const endTimeSelect = document.querySelector(`#${day} .end-time`);
 
-  // 場地公約
-  // -- Add
-  const ruleAddBtn = document.querySelector('#rule-add');
-  ruleAddBtn.addEventListener('click', () => {
-    addElement('.rule', '#rule-template', '#rule-node');
-  });
-}());
+  startTimeSelect.classList.toggle('invisible');
+  endTimeSelect.classList.toggle('invisible');
+  el.blur();
+}
+function startTimeHandler(el) {
+
+}
+function endTimeHandler(el) {
+
+}
+// #endregion
+
+// #region ===設施設備===
+const amenity = {
+  default: [],
+  other: [],
+  recording: [],
+  renting: [],
+};
+
+// ---基礎設備
+function defaultAmenityHandler(el) {
+
+}
+
+// ---自訂設備
+function otherAmenityHandler(el) {
+
+}
+
+// ---錄音設備
+function recordingSwitchHandler() {
+  const targetNode = document.querySelector('#recording-gear-node');
+
+  targetNode.classList.toggle('d-none');
+}
+function recordingHandler(el) {
+
+}
+
+// ---設備租借
+function rentingSwitchHandler() {
+  const targetNode = document.querySelector('#renting-gear-node');
+
+  targetNode.classList.toggle('d-none');
+}
+function rentingHandler(el) {
+
+}
+// #endregion
+
+// #region ===場地公約===
+
+// #endregion
+
+// #region ===場地特點===
+
+// #endregion
+

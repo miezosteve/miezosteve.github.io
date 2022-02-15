@@ -57,58 +57,51 @@
       color: $deco-gray;
     }
 
+    #brief-description {
+      min-height: 7rem;
+      max-height: 7rem;
+    }
+
     .words-counter {
       min-width: 7%;
       font-size: 0.9rem;
       color: $deco-gray;
     }
 
-    .thumbnail {
+    .thumbnail,
+    .upload-btn {
       position: relative;
-      padding-top: 75%;
-      width: 100%;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: $deco-gray;
 
-      &.add-photo {
-        cursor: pointer;
-
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          max-width: 40%;
-        }
+      .image-container {
+        padding-top: 60%;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $deco-gray;
       }
 
-      .delete-photo {
+      .delete-thumbnail {
+        @include control-btn($position: absolute, $top: -0.5rem, $font-size: 1.2rem ,$color: rgba(255, 0, 0, 0.8));
+      }
+
+      img {
         position: absolute;
-        top: -0.5rem;
-        right: -0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        height: auto;
-        font-size: 1.4rem;
-        color: rgba(255, 0, 0, 0.8);
-        border-radius: 100%;
-        cursor: pointer;
-        box-shadow: 1px 1px 0.5px rgba(128, 128, 128, 0.3);
-
-        &::before {
-          background-color: #fff;
-        }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 40%;
       }
+    }
+
+    .upload-btn {
+      cursor: pointer;
     }
 
     .float-input {
       position: relative;
 
-      #volumn + .float-text {
+      #capacity + .float-text {
         @include float-text($content: "人");
       }
 
@@ -121,6 +114,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
 
     .add-btn {
@@ -143,7 +137,12 @@
     }
 
     .rule-input {
-      min-height: 6rem;
+      min-height: 7rem;
+      max-height: 7rem;
+    }
+
+    .ck[role="textbox"] {
+      min-height: 16rem;
     }
   }
 }
@@ -151,8 +150,11 @@
 @media (min-width: 992px) {
   .accordion {
     .accordion-body {
-      .thumbnail {
-        padding-top: 60%;
+      .thumbnail,
+      .upload-btn {
+        .image-container {
+          padding-top: 75%;
+        }
       }
     }
   }

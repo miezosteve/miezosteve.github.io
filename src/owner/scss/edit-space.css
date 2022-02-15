@@ -32,6 +32,32 @@ select:focus,
           box-shadow: 0 0 0 0.1rem rgba(4, 113, 221, 0.6) !important;
 }
 
+textarea {
+  resize: none;
+}
+
+input::-webkit-input-placeholder {
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+input:-ms-input-placeholder {
+  -ms-user-select: none;
+      user-select: none;
+}
+
+input::-ms-input-placeholder {
+  -ms-user-select: none;
+      user-select: none;
+}
+
+input::placeholder {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 input[type="text"]::-webkit-input-placeholder {
   font-size: 0.9rem;
 }
@@ -133,15 +159,25 @@ a:hover {
   color: #ccc;
 }
 
+.accordion .accordion-body #brief-description {
+  min-height: 7rem;
+  max-height: 7rem;
+}
+
 .accordion .accordion-body .words-counter {
   min-width: 7%;
   font-size: 0.9rem;
   color: #ccc;
 }
 
-.accordion .accordion-body .thumbnail {
+.accordion .accordion-body .thumbnail,
+.accordion .accordion-body .upload-btn {
   position: relative;
-  padding-top: 75%;
+}
+
+.accordion .accordion-body .thumbnail .image-container,
+.accordion .accordion-body .upload-btn .image-container {
+  padding-top: 60%;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -149,23 +185,11 @@ a:hover {
   background-color: #ccc;
 }
 
-.accordion .accordion-body .thumbnail.add-photo {
-  cursor: pointer;
-}
-
-.accordion .accordion-body .thumbnail.add-photo img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  max-width: 40%;
-}
-
-.accordion .accordion-body .thumbnail .delete-photo {
+.accordion .accordion-body .thumbnail .delete-thumbnail,
+.accordion .accordion-body .upload-btn .delete-thumbnail {
   position: absolute;
   top: -0.5rem;
-  right: -0.5rem;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,24 +200,36 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
-  height: auto;
-  font-size: 1.4rem;
+  width: auto;
+  font-size: 1.2rem;
   color: rgba(255, 0, 0, 0.8);
-  border-radius: 100%;
   cursor: pointer;
-  -webkit-box-shadow: 1px 1px 0.5px rgba(128, 128, 128, 0.3);
-          box-shadow: 1px 1px 0.5px rgba(128, 128, 128, 0.3);
 }
 
-.accordion .accordion-body .thumbnail .delete-photo::before {
+.accordion .accordion-body .thumbnail .delete-thumbnail::before,
+.accordion .accordion-body .upload-btn .delete-thumbnail::before {
   background-color: #fff;
+}
+
+.accordion .accordion-body .thumbnail img,
+.accordion .accordion-body .upload-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 40%;
+}
+
+.accordion .accordion-body .upload-btn {
+  cursor: pointer;
 }
 
 .accordion .accordion-body .float-input {
   position: relative;
 }
 
-.accordion .accordion-body .float-input #volumn + .float-text::after {
+.accordion .accordion-body .float-input #capacity + .float-text::after {
   position: absolute;
   top: 0.2rem;
   right: 0;
@@ -223,6 +259,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
 }
 
 .accordion .accordion-body .add-btn {
@@ -238,6 +275,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
   width: auto;
   font-size: 1.2rem;
   color: rgba(0, 135, 235, 0.9);
@@ -261,6 +299,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
   width: auto;
   font-size: 1.2rem;
   color: rgba(255, 0, 0, 0.8);
@@ -283,12 +322,18 @@ a:hover {
 }
 
 .accordion .accordion-body .rule-input {
-  min-height: 6rem;
+  min-height: 7rem;
+  max-height: 7rem;
+}
+
+.accordion .accordion-body .ck[role="textbox"] {
+  min-height: 16rem;
 }
 
 @media (min-width: 992px) {
-  .accordion .accordion-body .thumbnail {
-    padding-top: 60%;
+  .accordion .accordion-body .thumbnail .image-container,
+  .accordion .accordion-body .upload-btn .image-container {
+    padding-top: 75%;
   }
 }
 /*# sourceMappingURL=edit-space.css.map */
