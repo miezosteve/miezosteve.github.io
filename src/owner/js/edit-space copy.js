@@ -98,29 +98,37 @@ function setStepBtn() {
   const preStepBtnArr = document.querySelectorAll('.pre-step');
   const targetNodeArr = contentIdArr.map((id) => document.querySelector(id));
 
-  targetNodeArr.forEach((node, index) => {
-    node.addEventListener('shown.bs.collapse', (e) => {
-      accordionIdx = index;
-    });
-  });
-
   nextStepBtnArr.forEach((btn, index) => {
     btn.addEventListener('click', (e) => {
       const targetNode = targetNodeArr[accordionIdx + 1];
+      const nowNodes = targetNodeArr[accordionIdx];
       // eslint-disable-next-line no-undef
-      const bsCollapse = new bootstrap.Collapse(targetNode, {
-        toggle: true,
+      const bsCollapseClose = new bootstrap.Collapse(nowNodes, {
+        hide: true,
       });
+      setTimeout(() => {
+        // eslint-disable-next-line no-undef
+        const bsCollapseOpen = new bootstrap.Collapse(targetNode, {
+          show: true,
+        });
+      }, 400);
     });
   });
 
   preStepBtnArr.forEach((btn, index) => {
     btn.addEventListener('click', (e) => {
       const targetNode = targetNodeArr[accordionIdx - 1];
+      const nowNodes = targetNodeArr[accordionIdx];
       // eslint-disable-next-line no-undef
-      const bsCollapse = new bootstrap.Collapse(targetNode, {
-        toggle: true,
+      const bsCollapseClose = new bootstrap.Collapse(nowNodes, {
+        hide: true,
       });
+      setTimeout(() => {
+        // eslint-disable-next-line no-undef
+        const bsCollapseOpen = new bootstrap.Collapse(targetNode, {
+          show: true,
+        });
+      }, 400);
     });
   });
 }
@@ -136,6 +144,7 @@ accordionCollapses.forEach((item, index) => {
   item.addEventListener('shown.bs.collapse', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    accordionIdx = index;
 
     const SCROLL_OFFSET = item.offsetTop - FIRST_ITEM_OFFSET_TOP;
 
