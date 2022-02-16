@@ -108,6 +108,7 @@ a:hover {
 }
 
 .accordion .accordion-item .accordion-button {
+  font-size: 1.1rem;
   color: inherit;
   background-color: rgba(228, 228, 228, 0.6);
 }
@@ -182,7 +183,7 @@ a:hover {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ccc;
+  background-color: #eee;
 }
 
 .accordion .accordion-body .thumbnail .delete-thumbnail,
@@ -328,6 +329,44 @@ a:hover {
 
 .accordion .accordion-body .ck[role="textbox"] {
   min-height: 16rem;
+}
+
+.accordion .accordion-body .step-btn.next-step, .accordion .accordion-body .step-btn.save-btn {
+  color: #fff;
+  background-color: rgba(0, 135, 235, 0.9);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.accordion .accordion-body .step-btn.next-step:hover, .accordion .accordion-body .step-btn.save-btn:hover {
+  background-color: #0080e2;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.accordion .accordion-body .step-btn.pre-step {
+  position: relative;
+  color: #ccc;
+}
+
+.accordion .accordion-body .step-btn.pre-step::after {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ccc;
+  content: "";
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.accordion .accordion-body .step-btn.pre-step:hover::after {
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 @media (min-width: 992px) {

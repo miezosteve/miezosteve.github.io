@@ -10,6 +10,7 @@
     border-radius: 0.5rem;
 
     .accordion-button {
+      font-size: 1.1rem;
       color: inherit;
       background-color: rgba(228, 228, 228, 0.6);
 
@@ -78,7 +79,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-color: $deco-gray;
+        background-color: #eee;
       }
 
       .delete-thumbnail {
@@ -143,6 +144,42 @@
 
     .ck[role="textbox"] {
       min-height: 16rem;
+    }
+
+    .step-btn, {
+      &.next-step,
+      &.save-btn {
+        color: #fff;
+        background-color: $main-blue;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $hover-blue;
+          transition: 0.2s;
+        }
+      }
+
+      &.pre-step {
+        position: relative;
+        color: $deco-gray;
+
+        &::after {
+          position: absolute;
+          top: 90%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: $deco-gray;
+          content: "";
+          transition: 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          width: 100%;
+          transition: 0.3s ease-in-out;
+        }
+      }
     }
   }
 }

@@ -243,6 +243,10 @@ ol {
   display: none;
 }
 
+.header .smaller-icon {
+  font-size: 1.2rem;
+}
+
 .main-body {
   padding-top: 4.05rem;
 }

@@ -28,7 +28,7 @@
             <span class="d-none d-lg-block fs-3">goBooking</span>
           </h1>
         </a>
-        <h2 id="site-name" class="fs-5 ms-2 ms-lg-4 mb-0 fs-5">管理後台</h2>
+        <h2 id="site-name" class="fs-5 ms-2 ms-lg-4 mb-0">管理後台</h2>
         <!-- PC header menu -->
         <div class="user-menu-btns d-none d-lg-flex ms-auto pe-2">
           <a class="menu-btn" href="#">
@@ -36,7 +36,7 @@
             <span data-tooltips="帳號管理"></span>
           </a>
           <a class="menu-btn mx-3" href="#">
-            <i class="bi bi-door-open-fill"></i>
+            <i class="bi bi-door-open-fill smaller-icon"></i>
             <span data-tooltips="登出"></span>
           </a>
         </div>
@@ -51,13 +51,13 @@
         </label>
         <!-- Burger Menu in Mobile -->
         <ul class="burger-menu px-5">
-          <li class="mt-3 mt-md-5">
+          <!-- <li class="mt-3 mt-md-5">
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-house-door me-3"></i><span>首頁</span></a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-plus-square me-3"></i><span>新增場地</span></a>
-          </li>
-          <li>
+          </li> -->
+          <li class="mt-5">
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-journal-text me-3"></i><span>場地管理</span></a>
           </li>
           <li>
@@ -66,9 +66,9 @@
           <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-tags me-3"></i><span>優惠管理</span></a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-palette me-3"></i><span>風格管理</span></a>
-          </li>
+          </li> -->
           <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-person me-3"></i><span>帳戶管理</span></a>
           </li>
@@ -78,23 +78,23 @@
       <div class="main-body d-flex">
         <!-- Side Bar -->
         <nav class="side-bar border-end d-none d-lg-block py-5">
-          <ul class="d-flex flex-wrap py-3">
+          <ul class="d-flex flex-wrap py-4">
             <!-- REF: if need collapse, add the href="id" & role="button" into the a tag-->
-            <li class="sidebar-item w-100 my-2">
+            <!-- <li class="sidebar-item w-100 my-2">
               <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="home-menu-pc"
                 class="toggle-btn d-flex py-2 fw-bolder px-4">
                 <i class="bi bi-house-door mx-2"></i>
                 <span class="ms-1">首頁</span>
               </a>
-            </li>
+            </li> -->
             <!-- Add Space -->
-            <li class="sidebar-item w-100 my-2">
+            <!-- <li class="sidebar-item w-100 my-2">
               <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="add-space-pc"
                 class="toggle-btn d-flex py-2 fw-bolder px-4">
                 <i class="bi bi-plus-square mx-2"></i>
                 <span class="ms-1">場地新增</span>
               </a>
-            </li>
+            </li> -->
             <!-- Space Management -->
             <li class="sidebar-item w-100 my-2">
               <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="space-menu-detail-pc"
@@ -120,17 +120,17 @@
               </a>
             </li>
             <!-- Style Management -->
-            <li class="sidebar-item w-100 my-2">
+            <!-- <li class="sidebar-item w-100 my-2">
               <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="style-menu-pc"
                 class="toggle-btn d-flex py-2 fw-bolder px-4">
                 <i class="bi bi-palette mx-2"></i>
                 <span class="ms-1">風格管理</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </nav>
         <!-- Main Content -->
-        <div class="main-content flex-grow-1 py-3 px-2 p-md-4 p-xl-5">
+        <div class="main-content flex-grow-1 py-1 px-2 py-md-1 px-md-4 py-xl-1 px-xl-5">
           <!-- Accordion -->
           <div class="accordion" id="edit-space-accordion">
             <!-- Space Info Tab -->
@@ -138,7 +138,7 @@
               <h2 class="accordion-header" id="info-title">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#info-content"
                   aria-expanded="true" aria-controls="info-content">
-                  <span class="fs-5"><i class="bi bi-info-circle me-3"></i>空間資訊</span>
+                  <span><i class="bi bi-info-circle me-3"></i>空間資訊</span>
                   <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
                 </button>
               </h2>
@@ -248,6 +248,13 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Step Buttons -->
+                  <div class="row gx-1 mt-5 mb-2 justify-content-end">
+                    <div class="col-12 text-end">
+                      <!-- <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button> -->
+                      <button class="next-step step-btn btn" type="button">下一步</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -256,7 +263,7 @@
               <h2 class="accordion-header" id="price-title">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#price-content" aria-expanded="true" aria-controls="price-content">
-                  <span class="fs-5"><i class="bi bi-tag me-3"></i>時租定價</span>
+                  <span><i class="bi bi-tag me-3"></i>時租定價</span>
                   <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
                 </button>
               </h2>
@@ -475,6 +482,13 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Step Buttons -->
+                  <div class="row gx-1 mt-3 mb-2 justify-content-end">
+                    <div class="col-12 text-end">
+                      <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
+                      <button class="next-step step-btn btn" type="button">下一步</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -483,7 +497,7 @@
               <h2 class="accordion-header" id="amenity-title">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#amenity-content" aria-expanded="true" aria-controls="amenity-content">
-                  <span class="fs-5"><i class="bi bi-easel me-3"></i>設施設備</span>
+                  <span><i class="bi bi-easel me-3"></i>設施設備</span>
                   <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
                 </button>
               </h2>
@@ -623,6 +637,13 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Step Buttons -->
+                  <div class="row gx-1 mt-3 mb-2 justify-content-end">
+                    <div class="col-12 text-end">
+                      <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
+                      <button class="next-step step-btn btn" type="button">下一步</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -631,7 +652,7 @@
               <h2 class="accordion-header" id="rules-title">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#rules-content" aria-expanded="true" aria-controls="rules-content">
-                  <span class="fs-5"><i class="bi bi-exclamation-square me-3"></i>場地公約</span>
+                  <span><i class="bi bi-exclamation-square me-3"></i>場地公約</span>
                   <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
                 </button>
               </h2>
@@ -657,6 +678,13 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Step Buttons -->
+                  <div class="row gx-1 mt-3 mb-2 justify-content-end">
+                    <div class="col-12 text-end">
+                      <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
+                      <button class="next-step step-btn btn" type="button">下一步</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -665,7 +693,7 @@
               <h2 class="accordion-header" id="description-title">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#description-content" aria-expanded="true" aria-controls="description-content">
-                  <span class="fs-5"><i class="bi bi-lightbulb me-3"></i>場地特點</span>
+                  <span><i class="bi bi-lightbulb me-3"></i>場地特點</span>
                   <i class="bi bi-caret-down-fill d-inline-block ms-auto"></i>
                 </button>
               </h2>
@@ -675,6 +703,13 @@
                   <div class="row">
                     <div class="col-12 p-0">
                       <div id="editor"></div>
+                    </div>
+                  </div>
+                  <!-- Step Buttons -->
+                  <div class="row gx-1 mt-3 mb-2 justify-content-end">
+                    <div class="col-12 text-end">
+                      <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
+                      <button class="save-btn step-btn btn" type="button">儲存</button>
                     </div>
                   </div>
                 </div>
@@ -694,7 +729,8 @@
   <!-- Photo Template-->
   <template id="thumbnail-template">
     <div class="thumbnail col-12 col-md-6 col-lg-4">
-      <div class="image-container rounded" style="background-image: url('https://picsum.photos/1920/1080/?random=10')"></div>
+      <div class="image-container rounded" style="background-image: url('https://picsum.photos/1920/1080/?random=10')">
+      </div>
       <i class="delete-thumbnail bi bi-x-circle-fill rounded-circle"></i>
     </div>
   </template>
@@ -834,8 +870,8 @@
     ClassicEditor
       .create(document.querySelector('#editor'), {
         toolbar: {
-        shouldNotGroupWhenFull: true,
-    }
+          shouldNotGroupWhenFull: true,
+        }
       })
       .then(editor => {
         console.log(editor);

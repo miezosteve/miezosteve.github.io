@@ -7,6 +7,7 @@ const switchIdArr = ['#recording-gear', '#renting-gear'];
 const parentNodeArr = itemNameArr.map((item) => document.querySelector(`#${item}-node`));
 const addBtnArr = itemNameArr.map((item) => document.querySelector(`#${item}-add`));
 const templateArr = itemNameArr.map((item) => document.querySelector(`#${item}-template`));
+let accordionIdx = 0;
 // #endregion
 
 // #region ===Global Function===
@@ -73,6 +74,7 @@ function setToggleSwitch() {
     node.addEventListener('change', () => {
       const target = document.querySelector(`${id}-node`);
       target.classList.toggle('d-none');
+      node.blur();
     });
   });
 }
@@ -90,9 +92,65 @@ function wordsCounter(el, parentId = '') {
   }
 }
 
+function setStepBtn() {
+  const contentIdArr = ['#info-content', '#price-content', '#amenity-content', '#rules-content', '#description-content'];
+  const nextStepBtnArr = document.querySelectorAll('.next-step');
+  const preStepBtnArr = document.querySelectorAll('.pre-step');
+  const targetNodeArr = contentIdArr.map((id) => document.querySelector(id));
+
+  targetNodeArr.forEach((node, index) => {
+    node.addEventListener('shown.bs.collapse', (e) => {
+      accordionIdx = index;
+    });
+  });
+
+  nextStepBtnArr.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+      const targetNode = targetNodeArr[accordionIdx + 1];
+      // eslint-disable-next-line no-undef
+      const bsCollapse = new bootstrap.Collapse(targetNode, {
+        toggle: true,
+      });
+    });
+  });
+
+  preStepBtnArr.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+      const targetNode = targetNodeArr[accordionIdx - 1];
+      // eslint-disable-next-line no-undef
+      const bsCollapse = new bootstrap.Collapse(targetNode, {
+        toggle: true,
+      });
+    });
+  });
+}
+
+// scroll to top
+const accordionCollapses = document.querySelectorAll('.accordion-collapse');
+const mainContent = document.querySelector('.main-content');
+const FIRST_ITEM_OFFSET_TOP = accordionCollapses[0].offsetTop;
+const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod'];
+const scrollContent = mobileDevice.some((e) => navigator.userAgent.match(e)) ? window : mainContent;
+
+accordionCollapses.forEach((item, index) => {
+  item.addEventListener('shown.bs.collapse', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const SCROLL_OFFSET = item.offsetTop - FIRST_ITEM_OFFSET_TOP;
+
+    scrollContent.scroll({
+      top: SCROLL_OFFSET,
+      left: 0,
+      behavior: 'smooth',
+    });
+  });
+});
+
 setAddBtn();
 setTimeSwitch();
 setToggleSwitch();
+setStepBtn();
 // #endregion
 
 // #region ===空間資訊===
