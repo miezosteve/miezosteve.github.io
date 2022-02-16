@@ -102,6 +102,8 @@ function setStepBtn() {
     btn.addEventListener('click', (e) => {
       const targetNode = targetNodeArr[accordionIdx + 1];
       const nowNodes = targetNodeArr[accordionIdx];
+      nowNodes.setAttribute('data-bs-toggle', 'collapse')
+      targetNode.setAttribute('data-bs-toggle', 'collapse')
       // eslint-disable-next-line no-undef
       const bsCollapseClose = new bootstrap.Collapse(nowNodes, {
         hide: true,
@@ -112,6 +114,9 @@ function setStepBtn() {
           show: true,
         });
       }, 400);
+
+      nowNodes.removeAttribute('data-bs-toggle')
+      targetNode.removeAttribute('data-bs-toggle')
     });
   });
 
@@ -156,6 +161,47 @@ accordionCollapses.forEach((item, index) => {
   });
 });
 
+const accordionButtons = document.querySelectorAll('.accordion-button');
+const targetContents = [...accordionButtons].map(item => document.querySelector(`${item.getAttribute('data-bs-target')}`))
+
+accordionButtons.forEach((btn, index) => {
+  btn.addEventListener('click', (e) => {
+    const targetContent = targetContents[index]
+    targetContents.forEach(content => {
+      content.setAttribute('data-bs-toggle', 'collapse')
+    })
+    const targetClassList = [...targetContent.classList];
+
+    if (!targetClassList.includes('show')) {
+      const shownContent = document.querySelector('.accordion-collapse.show');
+      const bsCollapseHide = new bootstrap.Collapse(shownContent, {
+        hide: true,
+      });
+      setTimeout(() => {
+        const bsCollapseOpen = new bootstrap.Collapse(targetContent, {
+          show: true,
+        });
+      }, 400);
+    } else {
+      const others = document.querySelectorAll('.accordion-collapse:not(".show")');
+      others.forEach(item => {
+        const bsCollapseHide = new bootstrap.Collapse(item, {
+          hide: true,
+        });
+      })
+      setTimeout(() => {
+        const bsCollapseOpen = new bootstrap.Collapse(targetContent, {
+          show: true,
+        });
+      }, 400);
+    }
+
+    targetContents.forEach(content => {
+      content.removeAttribute('data-bs-toggle')
+    })
+  })
+})
+
 setAddBtn();
 setTimeSwitch();
 setToggleSwitch();
@@ -174,7 +220,7 @@ const info = {
   activities: [],
   photo: [],
 };
-  // ---名稱
+// ---名稱
 function spaceNameHandler(el) {
 
 }
