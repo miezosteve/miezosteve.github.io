@@ -97,6 +97,14 @@ ol {
     box-shadow: rgba(160, 160, 160, 0.05) 0.02rem 0.02rem 0.24rem;
     transition: 0.5s ease-in-out;
 
+    & > li:first-child {
+      margin-top: 2rem;
+    }
+
+    & > li:last-child {
+      margin-bottom: 2rem;
+    }
+
     & > li {
       position: relative;
       color: rgba(51, 51, 51, 0.8) !important;

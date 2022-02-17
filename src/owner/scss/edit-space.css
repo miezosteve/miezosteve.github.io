@@ -7,6 +7,10 @@ html {
   color: #2c3136;
 }
 
+body {
+  font-family: "微軟正黑體", "Microsoft JhengHei UI", Helvetica, sans-serif, monospace;
+}
+
 body > * {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
@@ -336,14 +340,39 @@ a:hover {
   min-height: 16rem;
 }
 
-.accordion .accordion-body .step-btn.next-step, .accordion .accordion-body .step-btn.save-btn {
+.accordion .accordion-body .step-btn.next-step {
+  position: relative;
+  color: rgba(0, 135, 235, 0.9);
+}
+
+.accordion .accordion-body .step-btn.next-step::after {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: rgba(0, 135, 235, 0.9);
+  content: "";
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.accordion .accordion-body .step-btn.next-step:hover::after {
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.accordion .accordion-body .step-btn.save-btn {
   color: #fff;
   background-color: rgba(0, 135, 235, 0.9);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
-.accordion .accordion-body .step-btn.next-step:hover, .accordion .accordion-body .step-btn.save-btn:hover {
+.accordion .accordion-body .step-btn.save-btn:hover {
   background-color: #0080e2;
   -webkit-transition: 0.2s;
   transition: 0.2s;

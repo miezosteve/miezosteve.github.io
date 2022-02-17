@@ -28,9 +28,16 @@
             <span class="d-none d-lg-block fs-3">goBooking</span>
           </h1>
         </a>
-        <h2 id="site-name" class="fs-5 ms-2 ms-lg-4 mb-0">管理後台</h2>
+        <h2 id="site-name" class="fs-5 ms-2 ms-lg-4 mb-0">
+          管理後台
+          <!-- <span class="customer-name ms-2">(MicZone)</span> -->
+        </h2>
         <!-- PC header menu -->
         <div class="user-menu-btns d-none d-lg-flex ms-auto pe-2">
+          <!-- <a class="menu-btn mx-3" href="#">
+            <i class="bi bi-person-lines-fill smaller-icon"></i>
+            <span data-tooltips="客戶列表"></span>
+          </a> -->
           <a class="menu-btn" href="#">
             <i class="bi bi-person-fill"></i>
             <span data-tooltips="帳號管理"></span>
@@ -51,13 +58,13 @@
         </label>
         <!-- Burger Menu in Mobile -->
         <ul class="burger-menu px-5">
-          <!-- <li class="mt-3 mt-md-5">
-            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-house-door me-3"></i><span>首頁</span></a>
-          </li> -->
+          <li>
+            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-bar-chart me-3"></i><span>財務報表</span></a>
+          </li>
           <!-- <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-plus-square me-3"></i><span>新增場地</span></a>
           </li> -->
-          <li class="mt-5">
+          <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-journal-text me-3"></i><span>場地管理</span></a>
           </li>
           <li>
@@ -66,11 +73,14 @@
           <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-tags me-3"></i><span>優惠管理</span></a>
           </li>
-          <!-- <li>
-            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-palette me-3"></i><span>風格管理</span></a>
-          </li> -->
+          <li>
+            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-person-plus me-3"></i><span>客戶列表</span></a>
+          </li>
           <li>
             <a href="#" class="d-flex py-3 px-4"><i class="bi bi-person me-3"></i><span>帳戶管理</span></a>
+          </li>
+          <li>
+            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-door-open me-3"></i><span>登出</span></a>
           </li>
         </ul>
       </header>
@@ -80,19 +90,19 @@
         <nav class="side-bar border-end d-none d-lg-block py-5">
           <ul class="d-flex flex-wrap py-4">
             <!-- REF: if need collapse, add the href="id" & role="button" into the a tag-->
-            <!-- <li class="sidebar-item w-100 my-2">
-              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="home-menu-pc"
+            <li class="sidebar-item w-100 my-2">
+              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="add-space-pc"
                 class="toggle-btn d-flex py-2 fw-bolder px-4">
-                <i class="bi bi-house-door mx-2"></i>
-                <span class="ms-1">首頁</span>
+                <i class="bi bi-bar-chart mx-2"></i>
+                <span class="ms-1">財務報表</span>
               </a>
-            </li> -->
+            </li>
             <!-- Add Space -->
             <!-- <li class="sidebar-item w-100 my-2">
               <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="add-space-pc"
                 class="toggle-btn d-flex py-2 fw-bolder px-4">
                 <i class="bi bi-plus-square mx-2"></i>
-                <span class="ms-1">場地新增</span>
+                <span class="ms-1">新增場地</span>
               </a>
             </li> -->
             <!-- Space Management -->
@@ -119,14 +129,6 @@
                 <span class="ms-1">優惠管理</span>
               </a>
             </li>
-            <!-- Style Management -->
-            <!-- <li class="sidebar-item w-100 my-2">
-              <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="style-menu-pc"
-                class="toggle-btn d-flex py-2 fw-bolder px-4">
-                <i class="bi bi-palette mx-2"></i>
-                <span class="ms-1">風格管理</span>
-              </a>
-            </li> -->
           </ul>
         </nav>
         <!-- Main Content -->
@@ -252,7 +254,7 @@
                   <div class="row gx-1 mt-5 mb-2 justify-content-end">
                     <div class="col-12 text-end">
                       <!-- <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button> -->
-                      <button class="next-step step-btn btn" type="button">下一步</button>
+                      <button class="next-step step-btn btn px-2" type="button">下一步</button>
                     </div>
                   </div>
                 </div>
@@ -486,7 +488,7 @@
                   <div class="row gx-1 mt-3 mb-2 justify-content-end">
                     <div class="col-12 text-end">
                       <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
-                      <button class="next-step step-btn btn" type="button">下一步</button>
+                      <button class="next-step step-btn btn px-2" type="button">下一步</button>
                     </div>
                   </div>
                 </div>
@@ -641,7 +643,7 @@
                   <div class="row gx-1 mt-3 mb-2 justify-content-end">
                     <div class="col-12 text-end">
                       <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
-                      <button class="next-step step-btn btn" type="button">下一步</button>
+                      <button class="next-step step-btn btn px-2" type="button">下一步</button>
                     </div>
                   </div>
                 </div>
@@ -682,7 +684,7 @@
                   <div class="row gx-1 mt-3 mb-2 justify-content-end">
                     <div class="col-12 text-end">
                       <button class="pre-step step-btn btn px-2 me-3" type="button">返回</button>
-                      <button class="next-step step-btn btn" type="button">下一步</button>
+                      <button class="next-step step-btn btn px-2" type="button">下一步</button>
                     </div>
                   </div>
                 </div>
@@ -857,6 +859,8 @@
   <script src="../../vendors/vuejs/vue.global.js"></script>
   <!-- bootstrap js -->
   <script src="../../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- smoothscroll js -->
+  <script src="../../vendors/smoothscroll/smoothscroll.min.js"></script>
   <!-- axios js -->
   <script src="../../vendors/axios/axios.min.js"></script>
   <!-- ckeditor -->
@@ -865,7 +869,7 @@
   <script src="../../vendors/sortable/sortablejs.js"></script>
   <!-- my js -->
   <script src="../shared/js/layout.js"></script>
-  <script src="../js/edit-space copy.js"></script>
+  <script src="../js/edit-space copy.js" type="module"></script>
   <script>
     ClassicEditor
       .create(document.querySelector('#editor'), {

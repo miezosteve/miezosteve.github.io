@@ -1,9 +1,14 @@
+@charset "UTF-8";
 * {
   color: inherit;
 }
 
 html {
   color: #2c3136;
+}
+
+body {
+  font-family: "微軟正黑體", "Microsoft JhengHei UI", Helvetica, sans-serif, monospace;
 }
 
 body > * {

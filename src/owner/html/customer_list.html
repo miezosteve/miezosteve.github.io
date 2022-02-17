@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="shortcut icon" href="../img/miezo-ico.ico" type="image/x-icon">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="../../vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../vendors/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="../shared/scss/layout.css">
+  <link rel="stylesheet" href="../scss/customer-list.css">
+  <title>goBooking - 客戶列表</title>
+</head>
+
+<body>
+  <!-- Bg -->
+  <div class="bg-wrapper">
+    <!-- Main Card -->
+    <div class="main-card d-flex flex-column">
+      <!-- Header -->
+      <header class="header d-flex p-3 border-bottom">
+        <a href="#">
+          <h1 class="logo d-flex mb-0">
+            <img id="site-logo" class="me-2" src="../img/miezo-logo.png" alt="logo">
+            <span class="d-none d-lg-block fs-3">goBooking</span>
+          </h1>
+        </a>
+        <h2 id="site-name" class="fs-5 ms-2 ms-lg-4 mb-0">
+          管理後台
+          <!-- <span class="customer-name ms-2">(MicZone)</span> -->
+        </h2>
+        <!-- PC header menu -->
+        <div class="user-menu-btns d-none d-lg-flex ms-auto pe-2">
+          <a class="menu-btn mx-3" href="#">
+            <i class="bi bi-person-lines-fill smaller-icon"></i>
+            <span data-tooltips="客戶列表"></span>
+          </a>
+          <a class="menu-btn" href="#">
+            <i class="bi bi-person-fill"></i>
+            <span data-tooltips="帳號管理"></span>
+          </a>
+          <a class="menu-btn mx-3" href="#">
+            <i class="bi bi-door-open-fill smaller-icon"></i>
+            <span data-tooltips="登出"></span>
+          </a>
+        </div>
+        <!-- Burger -->
+        <input type="checkbox" id="burger-menu-checkbox" class="d-none">
+        <label for="burger-menu-checkbox" class="burger-menu-btn d-inline-block d-lg-none ms-auto">
+          <div class="burger d-flex flex-column d-lg-none">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+        <!-- Burger Menu in Mobile -->
+        <ul class="burger-menu px-5">
+          <li>
+            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-person-plus me-3"></i><span>客戶列表</span></a>
+          </li>
+          <li>
+            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-person me-3"></i><span>帳戶管理</span></a>
+          </li>
+          <li>
+            <a href="#" class="d-flex py-3 px-4"><i class="bi bi-door-open me-3"></i><span>登出</span></a>
+          </li>
+        </ul>
+      </header>
+      <!-- Main Body -->
+      <div class="main-body d-flex">
+        <!-- Main Content -->
+        <div class="main-content flex-grow-1 py-1 px-2 py-md-1 px-md-4 py-xl-1 px-xl-5">
+          <div class="row g-4 g-md-5 py-4 px-2 px-lg-4" id="customer-node">
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+            <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+              <div class="card-content border rounded p-3">
+                <div class="customer-photo rounded overflow-hidden mb-3">
+                  <img src="https://picsum.photos/1920/900/?random=10">
+                </div>
+                <div class="customer-name fs-5">
+                  <span class="name">MicZone</span>
+                  <span class="id">( 53773481 )</span>
+                </div>
+                <div class="upload-count">
+                  <span>上架空間數量</span>
+                  <span class="count mx-2">3</span>
+                  <span>間</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer id="footer" class="footer text-center py-3 mt-auto">
+        © 2019 - <span id="copyright-year">{{ thisYear }}</span> Ｍiézo Inc. | All Rights Reserved
+      </footer>
+    </div>
+  </div>
+
+
+  <!-- Customer Template-->
+  <template id="customer-template">
+    <a class="customer-card col-12 col-md-6 col-lg-4" href="#">
+      <div class="card-content border rounded p-3">
+        <div class="customer-photo rounded overflow-hidden mb-3">
+          <img src="https://picsum.photos/1920/900/?random=10">
+        </div>
+        <div class="customer-name fs-5">
+          <span class="name">MicZone</span>
+          <span class="id">( 53773481 )</span>
+        </div>
+        <div class="upload-count">
+          <span>上架空間數量</span>
+          <span class="count mx-2">3</span>
+          <span>間</span>
+        </div>
+      </div>
+    </a>
+  </template>
+
+
+  <!-- vue js -->
+  <script src="../../vendors/vuejs/vue.global.js"></script>
+  <!-- bootstrap js -->
+  <script src="../../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- smoothscroll js -->
+  <script src="../../vendors/smoothscroll/smoothscroll.min.js"></script>
+  <!-- axios js -->
+  <script src="../../vendors/axios/axios.min.js"></script>
+  <!-- ckeditor -->
+  <script src="../../vendors/ckeditor/ckeditor.js"></script>
+  <!-- sortable js -->
+  <script src="../../vendors/sortable/sortablejs.js"></script>
+  <!-- my js -->
+  <script src="../shared/js/layout.js"></script>
+</body>
+
+</html>

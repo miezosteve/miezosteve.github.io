@@ -151,7 +151,28 @@
     }
 
     .step-btn, {
-      &.next-step,
+      &.next-step {
+        position: relative;
+        color: $main-blue;
+
+        &::after {
+          position: absolute;
+          top: 90%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: $main-blue;
+          content: "";
+          transition: 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          width: 100%;
+          transition: 0.3s ease-in-out;
+        }
+      }
+
       &.save-btn {
         color: #fff;
         background-color: $main-blue;

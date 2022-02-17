@@ -1,9 +1,14 @@
+@charset "UTF-8";
 * {
   color: inherit;
 }
 
 html {
   color: #2c3136;
+}
+
+body {
+  font-family: "微軟正黑體", "Microsoft JhengHei UI", Helvetica, sans-serif, monospace;
 }
 
 body > * {
@@ -211,6 +216,14 @@ ol {
           box-shadow: rgba(160, 160, 160, 0.05) 0.02rem 0.02rem 0.24rem;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+}
+
+.header .burger-menu > li:first-child {
+  margin-top: 2rem;
+}
+
+.header .burger-menu > li:last-child {
+  margin-bottom: 2rem;
 }
 
 .header .burger-menu > li {
