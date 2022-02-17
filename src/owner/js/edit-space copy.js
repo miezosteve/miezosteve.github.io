@@ -130,7 +130,7 @@ function setStepBtn() {
         const bsCollapseOpen = new bootstrap.Collapse(targetNode, {
           toggle: true,
         });
-      }, 400);
+      }, 200);
     });
   });
 }
