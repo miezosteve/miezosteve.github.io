@@ -39,6 +39,10 @@
     }
   }
 
+  .accordion-collapse.collapsing {
+    transition: height 0.2s ease-in-out;
+  }
+
   .accordion-body {
     .input-invalid {
       box-shadow: 0 0 0 0.1rem $main-red !important;

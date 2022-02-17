@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 // #region ===Global Variables===
+const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad'];
+const scrollContent = mobileDevice.some((e) => navigator.userAgent.match(e)) ? window : document.querySelector('.main-content');
 const itemNameArr = ['usage', 'default-amenity', 'other-amenity', 'recording-gear', 'renting-gear', 'rule'];
 const switchIdArr = ['#recording-gear', '#renting-gear'];
 const parentNodeArr = itemNameArr.map((item) => document.querySelector(`#${item}-node`));
@@ -99,24 +101,18 @@ function setStepBtn() {
   const targetNodeArr = contentIdArr.map((id) => document.querySelector(id));
 
   nextStepBtnArr.forEach((btn, index) => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       const targetNode = targetNodeArr[accordionIdx + 1];
       const nowNodes = targetNodeArr[accordionIdx];
-      nowNodes.setAttribute('data-bs-toggle', 'collapse')
-      targetNode.setAttribute('data-bs-toggle', 'collapse')
+
       // eslint-disable-next-line no-undef
       const bsCollapseClose = new bootstrap.Collapse(nowNodes, {
-        hide: true,
+        toggle: true,
       });
-      setTimeout(() => {
-        // eslint-disable-next-line no-undef
-        const bsCollapseOpen = new bootstrap.Collapse(targetNode, {
-          show: true,
-        });
-      }, 400);
-
-      nowNodes.removeAttribute('data-bs-toggle')
-      targetNode.removeAttribute('data-bs-toggle')
+      // eslint-disable-next-line no-undef
+      const bsCollapseOpen = new bootstrap.Collapse(targetNode, {
+        toggle: true,
+      });
     });
   });
 
@@ -124,14 +120,15 @@ function setStepBtn() {
     btn.addEventListener('click', (e) => {
       const targetNode = targetNodeArr[accordionIdx - 1];
       const nowNodes = targetNodeArr[accordionIdx];
+
       // eslint-disable-next-line no-undef
       const bsCollapseClose = new bootstrap.Collapse(nowNodes, {
-        hide: true,
+        toggle: true,
       });
       setTimeout(() => {
         // eslint-disable-next-line no-undef
         const bsCollapseOpen = new bootstrap.Collapse(targetNode, {
-          show: true,
+          toggle: true,
         });
       }, 400);
     });
@@ -140,15 +137,10 @@ function setStepBtn() {
 
 // scroll to top
 const accordionCollapses = document.querySelectorAll('.accordion-collapse');
-const mainContent = document.querySelector('.main-content');
-const FIRST_ITEM_OFFSET_TOP = accordionCollapses[0].offsetTop;
-const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod'];
-const scrollContent = mobileDevice.some((e) => navigator.userAgent.match(e)) ? window : mainContent;
+const FIRST_ITEM_OFFSET_TOP = accordionCollapses[0].offsetTop + 5;
 
 accordionCollapses.forEach((item, index) => {
   item.addEventListener('shown.bs.collapse', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
     accordionIdx = index;
 
     const SCROLL_OFFSET = item.offsetTop - FIRST_ITEM_OFFSET_TOP;
@@ -161,51 +153,11 @@ accordionCollapses.forEach((item, index) => {
   });
 });
 
-const accordionButtons = document.querySelectorAll('.accordion-button');
-const targetContents = [...accordionButtons].map(item => document.querySelector(`${item.getAttribute('data-bs-target')}`))
-
-accordionButtons.forEach((btn, index) => {
-  btn.addEventListener('click', (e) => {
-    const targetContent = targetContents[index]
-    targetContents.forEach(content => {
-      content.setAttribute('data-bs-toggle', 'collapse')
-    })
-    const targetClassList = [...targetContent.classList];
-
-    if (!targetClassList.includes('show')) {
-      const shownContent = document.querySelector('.accordion-collapse.show');
-      const bsCollapseHide = new bootstrap.Collapse(shownContent, {
-        hide: true,
-      });
-      setTimeout(() => {
-        const bsCollapseOpen = new bootstrap.Collapse(targetContent, {
-          show: true,
-        });
-      }, 400);
-    } else {
-      const others = document.querySelectorAll('.accordion-collapse:not(".show")');
-      others.forEach(item => {
-        const bsCollapseHide = new bootstrap.Collapse(item, {
-          hide: true,
-        });
-      })
-      setTimeout(() => {
-        const bsCollapseOpen = new bootstrap.Collapse(targetContent, {
-          show: true,
-        });
-      }, 400);
-    }
-
-    targetContents.forEach(content => {
-      content.removeAttribute('data-bs-toggle')
-    })
-  })
-})
-
 setAddBtn();
 setTimeSwitch();
 setToggleSwitch();
 setStepBtn();
+
 // #endregion
 
 // #region ===空間資訊===
